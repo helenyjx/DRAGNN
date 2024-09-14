@@ -52,8 +52,8 @@ def get_drug_sim_Matrix(drug_similarity, drug_drug_topk):
 
 def load_mat(filepath):
     mat = scio.loadmat(filepath)
-    drug_sim = mat["drug"].astype(np.float)
-    disease_sim = mat["disease"].astype(np.float)
+    drug_sim = mat["drug"].astype(np.float32)
+    disease_sim = mat["disease"].astype(np.float32)
     drug_name = mat["Wrname"].reshape(-1)
     drug_num = len(drug_name)
     disease_name = mat["Wdname"].reshape(-1)
@@ -81,8 +81,8 @@ def load_lrssl(filepath, reduce=True):
     dd = disease_sim.to_numpy(dtype=np.float32)
     rname = drug_sim.columns.to_numpy()
     dname = disease_sim.columns.to_numpy()
-    drug_sim = rr.astype(np.float)
-    disease_sim = dd.astype(np.float)
+    drug_sim = rr.astype(np.float32)
+    disease_sim = dd.astype(np.float32)
     drug_name = rname.reshape(-1)
     drug_num = len(drug_name)
     disease_name = dname.reshape(-1)

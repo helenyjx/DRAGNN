@@ -115,8 +115,8 @@ def cross_validation():
                                                     drug_drug_topk=drug_knn_number)
     final_all_auroc, final_all_aupr = [], []
     for fold_num in range(len(all_train_mask)):
-        tf.reset_default_graph()
-        tf.set_random_seed(seed)
+        tf.compat.v1.reset_default_graph()
+        tf.compat.v1.set_random_seed(seed)
         np.random.seed(seed)
         train_data = (disease_disease_sim_Matrix, drug_drug_sim_Matrix, all_train_mask[fold_num], truth_label)
         valid_data = (disease_disease_sim_Matrix, drug_drug_sim_Matrix, all_test_mask[fold_num], truth_label)
@@ -124,10 +124,10 @@ def cross_validation():
         train_manager = BatchManager(train_data, config['batch_size'], "train")
         valid_manager = BatchManager(valid_data, config['batch_size'], 'valid')
         test_manager = BatchManager(test_data, config['batch_size'], "test")
-        tf_config = tf.ConfigProto()
+        tf_config = tf.compat.v1.ConfigProto()
         tf_config.gpu_options.allow_growth = True
         steps_per_epoch = train_manager.len_data
-        with tf.Session(config=tf_config) as sess:
+        with tf.compat.v1.Session(config=tf_config) as sess:
             ckptpath = "ckpt/{}/{}-fold{}/".format(dataset, dataset, fold_num + 1)
             model = create_model(sess, Model, ckptpath, config, logger)
             logger.info("start training fold {}".format(fold_num + 1))
