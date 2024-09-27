@@ -1,0 +1,14 @@
+2024-09-22 14:58:59,046 - .\log/Fdataset - INFO - drug count :593
+2024-09-22 14:58:59,046 - .\log/Fdataset - INFO - disease count:313
+2024-09-22 14:58:59,720 - .\log/Fdataset - INFO - Created model with fresh parameters.
+2024-09-22 14:58:59,721 - .\log/Fdataset - INFO - start training fold 1
+2024-09-22 15:01:49,643 - .\log/Fdataset - INFO - drug count :593
+2024-09-22 15:01:49,643 - .\log/Fdataset - INFO - disease count:313
+2024-09-22 15:01:50,332 - .\log/Fdataset - INFO - Created model with fresh parameters.
+2024-09-22 15:01:50,332 - .\log/Fdataset - INFO - start training fold 1
+2024-09-22 15:03:53,247 - .\log/Fdataset - INFO - drug count :593
+2024-09-22 15:03:53,248 - .\log/Fdataset - INFO - disease count:313
+2024-09-22 15:03:53,933 - .\log/Fdataset - INFO - Created model with fresh parameters.
+2024-09-22 15:03:53,933 - .\log/Fdataset - INFO - start training fold 1
+2024-09-22 15:04:49,138 - .\log/Fdataset - INFO - evaluate data:valid
+2024-09-22 15:05:21,571 - .\log/Fdataset - INFO - evaluate data:valid
